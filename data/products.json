@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "title": "MCCS IoT Device",
+        "category": "Hardware",
+        "description": "車両に取り付けるIoTデバイス。リアルタイムでGPS、エンジン状態、走行データを収集します。",
+        "image": "assets/Asset 4.png"
+    },
+    {
+        "id": 2,
+        "title": "AI Credit Scoring Platform",
+        "category": "Software",
+        "description": "車両データとAIを活用した革新的な与信スコアリングプラットフォーム。",
+        "image": "assets/card.png"
+    },
+    {
+        "id": 3,
+        "title": "Fleet Management System",
+        "category": "Platform",
+        "description": "車両フリートの一元管理。位置情報、メンテナンス、ドライバー管理を統合。",
+        "image": "assets/Asset 3.png"
+    },
+    {
+        "id": 4,
+        "title": "Smart Parking Solution",
+        "category": "Mobility",
+        "description": "AIによるスマート駐車場管理システム。空き状況のリアルタイム把握。",
+        "image": "assets/parket.png"
+    },
+    {
+        "id": 5,
+        "title": "Connected Car Platform",
+        "category": "Platform",
+        "description": "車両データのクラウド集約と分析。予防保守とドライバー行動分析。",
+        "image": "assets/car2.png"
+    },
+    {
+        "id": 6,
+        "title": "Mobility Data Analytics",
+        "category": "Software",
+        "description": "移動データの可視化と分析ダッシュボード。都市計画に活用可能。",
+        "image": "assets/34673258_m.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Vehicle Security System",
+        "category": "Hardware",
+        "description": "遠隔からの車両ロック・アンロック制御。盗難防止と債権回収を支援。",
+        "image": "assets/33899414_m.jpg"
+    },
+    {
+        "id": 8,
+        "title": "ASEAN Mobility Network",
+        "category": "Service",
+        "description": "東南アジア全域をカバーするモビリティネットワーク。金融包摂を実現。",
+        "image": "assets/23917381_m.jpg"
+    },
+    {
+        "id": 9,
+        "title": "Driver Behavior Analysis",
+        "category": "Software",
+        "description": "運転行動をAIで分析し、安全運転スコアリングとフィードバックを提供。",
+        "image": "assets/33643559_m.jpg"
+    }
+]
