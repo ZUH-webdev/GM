@@ -525,30 +525,35 @@ function initLenis() {
 function initGSAPAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero zoom-in and fade on scroll
-    gsap.to('.hero__content', {
-        scale: 1.3,
-        opacity: 0,
-        ease: 'none',
+    // Hero — pin the section while content zooms in + slides left, then unpin
+    const heroTl = gsap.timeline({
         scrollTrigger: {
             trigger: '.hero',
             start: 'top top',
-            end: '80% top',
-            scrub: true,
-            pin: false
+            end: '+=120%',
+            scrub: 1,
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: 1
         }
     });
 
-    gsap.to('.hero__bg', {
-        scale: 1.1,
-        ease: 'none',
-        scrollTrigger: {
-            trigger: '.hero',
-            start: 'top top',
-            end: 'bottom top',
-            scrub: true
-        }
-    });
+    heroTl
+        .to('.hero__content', {
+            scale: 1.6,
+            x: '-35vw',
+            opacity: 0,
+            filter: 'blur(8px)',
+            ease: 'power2.in'
+        }, 0)
+        .to('.hero__bg', {
+            scale: 1.18,
+            ease: 'none'
+        }, 0)
+        .to('#hero-canvas', {
+            opacity: 0,
+            ease: 'power1.in'
+        }, 0);
 
     // Performance section - title slides in from left
     gsap.from('.performance__title', {
