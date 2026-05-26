@@ -983,6 +983,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initSolutionAnimation();
     initAmbientParticleNetwork('performance-ambient-canvas');
     initAmbientParticleNetwork('core-platform-ambient-canvas');
+    initAmbientParticleNetwork('sdg-ambient-canvas');
+    initAmbientParticleNetwork('mission-ambient-canvas');
     initHeader();
     initMobileMenu();
     initProducts();
