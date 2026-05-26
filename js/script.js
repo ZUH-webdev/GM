@@ -412,12 +412,24 @@ function initAmbientParticleNetwork(canvasId) {
     const canvas = document.getElementById(canvasId);
     if (!canvas) return;
 
-    const section = canvas.parentElement;
+    const container = canvas.parentElement;
+    const section = container.closest('section') || container;
     const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(72, section.clientWidth / section.clientHeight, 0.1, 1000);
+    const camera = new THREE.PerspectiveCamera(72, Math.max(section.clientWidth,1) / Math.max(section.clientHeight,1), 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setSize(section.clientWidth, section.clientHeight);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    // ensure the DOM canvas fills the parent area
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+
+    function resizeRendererToSection() {
+        const w = Math.max(section.clientWidth, 1);
+        const h = Math.max(section.clientHeight, 1);
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h, false);
+    }
+    resizeRendererToSection();
 
     const particleCount = 84;
     const positions = new Float32Array(particleCount * 3);
@@ -478,7 +490,7 @@ function initAmbientParticleNetwork(canvasId) {
 
         if (linesMesh) {
             scene.remove(linesMesh);
-            linesMesh.geometry.dispose();
+            if (linesMesh.geometry) linesMesh.geometry.dispose();
         }
 
         const linePositions = [];
@@ -508,13 +520,7 @@ function initAmbientParticleNetwork(canvasId) {
 
     animate(0);
 
-    window.addEventListener('resize', () => {
-        const w = section.clientWidth;
-        const h = section.clientHeight;
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
-        renderer.setSize(w, h);
-    });
+    window.addEventListener('resize', resizeRendererToSection);
 }
 
 /* ===== Product Grid Rendering ===== */
@@ -840,38 +846,76 @@ function initGSAPAnimations() {
     });
 
     // SDGs section
-    gsap.from('.sdgs__title', {
+    // SDG / ESG reveal animations (new selectors)
+    gsap.from('.sdg-header', {
         y: 40,
         opacity: 0,
-        duration: 0.8,
-        scrollTrigger: {
-            trigger: '.sdgs',
-            start: 'top 75%',
-            toggleActions: 'play reverse play reverse'
-        }
-    });
-
-    gsap.from('.sdgs__body', {
-        y: 30,
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.2,
-        scrollTrigger: {
-            trigger: '.sdgs__body',
-            start: 'top 85%',
-            toggleActions: 'play reverse play reverse'
-        }
-    });
-
-    gsap.from('.sdgs__collage', {
-        x: 80,
-        opacity: 0,
-        rotation: 5,
-        duration: 1,
+        duration: 0.9,
         ease: 'power2.out',
         scrollTrigger: {
-            trigger: '.sdgs__collage',
+            trigger: '.sdg-section',
             start: 'top 80%',
+            toggleActions: 'play reverse play reverse'
+        }
+    });
+
+    gsap.from('.sdg-left', {
+        x: -60,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.sdg-section',
+            start: 'top 78%',
+            toggleActions: 'play reverse play reverse'
+        }
+    });
+
+    gsap.from('.sdg-right', {
+        x: 60,
+        opacity: 0,
+        duration: 0.9,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.sdg-section',
+            start: 'top 78%',
+            toggleActions: 'play reverse play reverse'
+        }
+    });
+
+    gsap.from('.sdg-block', {
+        y: 20,
+        opacity: 0,
+        duration: 0.7,
+        stagger: 0.12,
+        scrollTrigger: {
+            trigger: '.sdg-left',
+            start: 'top 82%',
+            toggleActions: 'play reverse play reverse'
+        }
+    });
+
+    gsap.from('.sdg-photos img', {
+        y: 20,
+        opacity: 0,
+        duration: 0.9,
+        stagger: 0.08,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.sdg-right',
+            start: 'top 82%',
+            toggleActions: 'play reverse play reverse'
+        }
+    });
+
+    gsap.from('.sdg-watermark', {
+        scale: 0.98,
+        opacity: 0.06,
+        duration: 1.1,
+        ease: 'power2.out',
+        scrollTrigger: {
+            trigger: '.sdg-section',
+            start: 'top 85%',
             toggleActions: 'play reverse play reverse'
         }
     });
