@@ -83,6 +83,13 @@
 
     <!-- New Performance Section -->
     <section class="performance" id="performance">
+      <div class="ambient-layer performance__ambient" aria-hidden="true">
+        <img src="assets/Asset 5.png" alt="" class="ambient-orb performance__ambient-orb performance__ambient-orb--tl" />
+        <img src="assets/Asset 6.png" alt="" class="ambient-orb performance__ambient-orb performance__ambient-orb--tr" />
+        <img src="assets/Asset 7.png" alt="" class="ambient-orb performance__ambient-orb performance__ambient-orb--bl" />
+        <img src="assets/Asset 8.png" alt="" class="ambient-orb performance__ambient-orb performance__ambient-orb--br" />
+        <canvas id="performance-ambient-canvas" class="ambient-layer__canvas performance__ambient-canvas"></canvas>
+      </div>
       <div class="performance__content">
         <h2 class="performance__title">New<br />Performance</h2>
         <p class="performance__subtitle">
@@ -137,6 +144,13 @@
 
     <!-- Core Platform Section -->
     <section class="core-platform" id="services">
+      <div class="core-platform__ambient" aria-hidden="true">
+        <img src="assets/Asset 5.png" alt="" class="ambient-orb core-platform__ambient-orb core-platform__ambient-orb--tl" />
+        <img src="assets/Asset 6.png" alt="" class="ambient-orb core-platform__ambient-orb core-platform__ambient-orb--tr" />
+        <img src="assets/Asset 7.png" alt="" class="ambient-orb core-platform__ambient-orb core-platform__ambient-orb--bl" />
+        <img src="assets/Asset 8.png" alt="" class="ambient-orb core-platform__ambient-orb core-platform__ambient-orb--br" />
+        <canvas id="core-platform-ambient-canvas" class="ambient-layer__canvas core-platform__ambient-canvas"></canvas>
+      </div>
       <div class="core-platform__header">
         <h2 class="core-platform__title">CORE<br />PLAT FORM</h2>
         <p class="core-platform__subtitle">コアプラットフォーム</p>
@@ -271,85 +285,63 @@
       </div>
     </section>
 
-    <!-- Products Section -->
-    <section class="products" id="products">
-      <div class="products__container">
-        <div class="products__header">
-          <h2 class="products__title">PRODUCTS</h2>
-          <p class="products__subtitle">
-            GMSが提供するモビリティ・ソリューション一覧
-          </p>
-          <div class="products__search">
-            <span class="products__search-icon">⌕</span>
-            <input
-              type="search"
-              id="product-search"
-              class="products__search-input"
-              placeholder="製品名・カテゴリ・キーワードで検索..."
-              autocomplete="off"
-            />
-          </div>
-        </div>
-        <div class="products__grid" id="products-grid"></div>
-        <p class="products__no-results" id="no-results">
-          該当する製品が見つかりませんでした。
-        </p>
-      </div>
-    </section>
+  
 
     <!-- SDGs / ESG Section -->
-    <section class="sdgs" id="sdgs">
-      <p class="sdgs__marquee">Driving Data for a Sustainable Future</p>
-      <div class="sdgs__container">
-        <div class="sdgs__left">
-          <h2 class="sdgs__title">SDGs／ESG</h2>
-          <p class="sdgs__subtitle">
-            一分一秒の走行データが、持続可能な未来を形づくる。
-          </p>
-          <div class="sdgs__body">
-            <h3>GMSの事業活動そのものがSDGsに貢献</h3>
-            <p>
+    <section class="sdg-section" id="sdgs">
+      <p class="sdg-watermark">Driving Data for a Sustainable Future</p>
+      <div class="sdg-header">
+        <h2 class="sdg-heading">SDGs／ESG</h2>
+        <p class="sdg-lead">
+          一分一秒の走行データが、持続可能な未来を形づくる。
+        </p>
+      </div>
+      <div class="sdg-inner">
+        <div class="sdg-left">
+          <div class="sdg-block">
+            <h3 class="sdg-block-title">GMSの事業活動そのものがSDGsに貢献</h3>
+            <p class="sdg-body">
               GMSは、SDGsの最優先課題「貧困をなくそう」の解決に、事業を通じて貢献しています(*)。その「将来性」「革新性」「社会的インパクト」の点が評価され、2019年に日本で開催されたG20において、GMS事業が「持続可能かつ包括的な成長に貢献する国際ビジネス事例」として採択されました。
             </p>
-            <p>
+            <p class="sdg-body">
               GMSは社会課題解決の中に経済合理性を創出し、真の意味で持続可能なビジネスモデルを構築しています。
             </p>
-            <small
-              >*経済産業省「SDGs経営/ESG投資研究会」委員に選任（2019年、当社代表取締役社長
-              CEO）</small
-            >
+            <p class="sdg-footnote">
+              *経済産業省「SDGs経営/ESG投資研究会」委員に選任（2019年、当社代表取締役社長 CEO）
+            </p>
           </div>
-          <div class="sdgs__icons">
-            <img src="assets/Asset 13.png" alt="SDGs Goals" />
+          <div class="sdg-actions">
+            <div class="sdg-icons" aria-label="SDGs goals">
+              <img src="assets/icons.png" alt="SDG icons" class="sdg-icons-img" />
+            </div>
+            <a href="#" class="sdg-btn">もっと詳しく</a>
           </div>
-          <a href="#" class="sdgs__btn">もっと詳しく</a>
         </div>
-        <div class="sdgs__right">
-          <div class="sdgs__collage">
+        <div class="sdg-right">
+          <div class="sdg-photos">
             <img
-              src="assets/stock-photo-a-joyful-southeast-asian-tricycle-driver-and-female-passenger-enjoy-a-light-hearted-ride-smiling-2657469727.jpg"
+              src="assets/pixta_98835275.jpg"
               alt=""
-              class="sdgs__img sdgs__img--1"
-            />
-            <img
-              src="assets/stock-photo-group-of-happy-smiling-village-school-kids-in-uniform-standing-at-middle-paddy-field-by-looking-2150952251.jpg"
-              alt=""
-              class="sdgs__img sdgs__img--2"
+              class="sdg-photo sdg-photo-back"
             />
             <img
               src="assets/stock-photo-south-asian-rural-children-smiling-with-handmade-kite-in-hands-2508350681.jpg"
               alt=""
-              class="sdgs__img sdgs__img--3"
+              class="sdg-photo sdg-photo-tl"
             />
             <img
-              src="assets/pixta_98835275.jpg"
+              src="assets/stock-photo-a-joyful-southeast-asian-tricycle-driver-and-female-passenger-enjoy-a-light-hearted-ride-smiling-2657469727.jpg"
               alt=""
-              class="sdgs__img sdgs__img--4"
+              class="sdg-photo sdg-photo-front"
+            />
+            <img
+              src="assets/stock-photo-group-of-happy-smiling-village-school-kids-in-uniform-standing-at-middle-paddy-field-by-looking-2150952251.jpg"
+              alt=""
+              class="sdg-photo sdg-photo-br"
             />
           </div>
         </div>
       </div>
-    </section>
 
     <!-- Mission Statement Section -->
     <section class="mission">
@@ -445,215 +437,7 @@
       </div>
     </section>
 
-    <!-- Assets Gallery Section -->
-    <section class="assets-gallery" id="assets">
-      <div class="assets-gallery__header">
-        <h2 class="assets-gallery__title">Asset Library</h2>
-        <p class="assets-gallery__subtitle">All project assets in one place</p>
-      </div>
-
-      <div class="assets-gallery__container">
-        <!-- PNG Assets -->
-        <div class="assets-gallery__group">
-          <h3 class="assets-gallery__group-title">Design Assets</h3>
-          <div class="assets-gallery__grid">
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 3.png" alt="Asset 3" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 3</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 4.png" alt="Asset 4" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 4</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 5.png" alt="Asset 5" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 5</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 6.png" alt="Asset 6" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 6</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 7.png" alt="Asset 7" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 7</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 8.png" alt="Asset 8" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 8</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 9.png" alt="Asset 9" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 9</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 10.png" alt="Asset 10" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 10</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 11.png" alt="Asset 11" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 11</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 12.png" alt="Asset 12" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 12</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 13.png" alt="Asset 13" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 13</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 16.png" alt="Asset 16" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 16</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 17.png" alt="Asset 17" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 17</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 18.png" alt="Asset 18" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 18</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 19.png" alt="Asset 19" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 19</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 20.png" alt="Asset 20" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 20</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 21.png" alt="Asset 21" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 21</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 22.png" alt="Asset 22" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 22</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 23.png" alt="Asset 23" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 23</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 24.png" alt="Asset 24" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 24</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 25.png" alt="Asset 25" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 25</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 26.png" alt="Asset 26" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 26</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 30.png" alt="Asset 30" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 30</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/Asset 31.png" alt="Asset 31" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Asset 31</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Product Images -->
-        <div class="assets-gallery__group">
-          <h3 class="assets-gallery__group-title">Product Images</h3>
-          <div class="assets-gallery__grid">
-            <div class="assets-gallery__item">
-              <img src="assets/car.png" alt="Car" class="assets-gallery__image" />
-              <span class="assets-gallery__label">car</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/car2.png" alt="Car 2" class="assets-gallery__image" />
-              <span class="assets-gallery__label">car2</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/card.png" alt="Card" class="assets-gallery__image" />
-              <span class="assets-gallery__label">card</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/parket.png" alt="Parking" class="assets-gallery__image" />
-              <span class="assets-gallery__label">parket</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/main.png" alt="Main" class="assets-gallery__image" />
-              <span class="assets-gallery__label">main</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/logo.png" alt="Logo" class="assets-gallery__image" />
-              <span class="assets-gallery__label">logo</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Background & Decoration -->
-        <div class="assets-gallery__group">
-          <h3 class="assets-gallery__group-title">Background & Decorative</h3>
-          <div class="assets-gallery__grid">
-            <div class="assets-gallery__item">
-              <img src="assets/first-view.png" alt="First View" class="assets-gallery__image" />
-              <span class="assets-gallery__label">first-view</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/f-back.png" alt="F-Back" class="assets-gallery__image" />
-              <span class="assets-gallery__label">f-back</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/deco-network-1.png" alt="Network 1" class="assets-gallery__image" />
-              <span class="assets-gallery__label">deco-network-1</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/deco-network-2.png" alt="Network 2" class="assets-gallery__image" />
-              <span class="assets-gallery__label">deco-network-2</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/marquee-1.png" alt="Marquee" class="assets-gallery__image" />
-              <span class="assets-gallery__label">marquee-1</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Stock Photos -->
-        <div class="assets-gallery__group">
-          <h3 class="assets-gallery__group-title">Stock Photography</h3>
-          <div class="assets-gallery__grid">
-            <div class="assets-gallery__item">
-              <img src="assets/23917381_m.jpg" alt="Photo 1" class="assets-gallery__image" />
-              <span class="assets-gallery__label">23917381_m</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/33643559_m.jpg" alt="Photo 2" class="assets-gallery__image" />
-              <span class="assets-gallery__label">33643559_m</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/33899414_m.jpg" alt="Photo 3" class="assets-gallery__image" />
-              <span class="assets-gallery__label">33899414_m</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/34673258_m.jpg" alt="Photo 4" class="assets-gallery__image" />
-              <span class="assets-gallery__label">34673258_m</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/pixta_98835275.jpg" alt="Photo 5" class="assets-gallery__image" />
-              <span class="assets-gallery__label">pixta_98835275</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/stock-photo-a-joyful-southeast-asian-tricycle-driver-and-female-passenger-enjoy-a-light-hearted-ride-smiling-2657469727.jpg" alt="Tricycle" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Tricycle Driver</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/stock-photo-group-of-happy-smiling-village-school-kids-in-uniform-standing-at-middle-paddy-field-by-looking-2150952251.jpg" alt="School Kids" class="assets-gallery__image" />
-              <span class="assets-gallery__label">School Kids</span>
-            </div>
-            <div class="assets-gallery__item">
-              <img src="assets/stock-photo-south-asian-rural-children-smiling-with-handmade-kite-in-hands-2508350681.jpg" alt="Children Kite" class="assets-gallery__image" />
-              <span class="assets-gallery__label">Children Kite</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    
 
     <!-- Company / Contact Section -->
     <section class="company-section">

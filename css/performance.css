@@ -10,6 +10,58 @@
   background: transparent !important; /* ← Transparent with !important */
 }
 
+.performance__ambient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.performance__ambient-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  opacity: 0.82;
+}
+
+.performance__ambient-orb {
+  position: absolute;
+  width: 42%;
+  max-width: 420px;
+  opacity: 0.16;
+  pointer-events: none;
+  z-index: 0;
+  animation: networkFloat 12s ease-in-out infinite;
+}
+
+.performance__ambient-orb--tl {
+  top: 4%;
+  left: -8%;
+}
+
+.performance__ambient-orb--tr {
+  top: 8%;
+  right: -10%;
+  animation-delay: -3s;
+}
+
+.performance__ambient-orb--bl {
+  bottom: 8%;
+  left: -10%;
+  animation-delay: -6s;
+}
+
+.performance__ambient-orb--br {
+  bottom: 6%;
+  right: -8%;
+  animation-delay: -9s;
+}
+
 /* ── Content (left) ── */
 .performance__content {
   position: relative;

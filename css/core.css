@@ -5,8 +5,62 @@
     overflow: hidden;
 }
 
+.core-platform__ambient {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.core-platform__ambient-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    opacity: 0.82;
+}
+
+.core-platform__ambient-orb {
+    position: absolute;
+    width: 44%;
+    max-width: 460px;
+    opacity: 0.16;
+    pointer-events: none;
+    z-index: 0;
+    animation: networkFloat 12s ease-in-out infinite;
+}
+
+.core-platform__ambient-orb--tl {
+    top: 0;
+    left: -8%;
+}
+
+.core-platform__ambient-orb--tr {
+    top: 6%;
+    right: -8%;
+    animation-delay: -3s;
+}
+
+.core-platform__ambient-orb--bl {
+    bottom: 6%;
+    left: -8%;
+    animation-delay: -6s;
+}
+
+.core-platform__ambient-orb--br {
+    bottom: 2%;
+    right: -8%;
+    animation-delay: -9s;
+}
+
 .core-platform__header {
     margin-bottom: 4rem;
+    position: relative;
+    z-index: 2;
 }
 
 .core-platform__title {
@@ -26,6 +80,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .chain-step {

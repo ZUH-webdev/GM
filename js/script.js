@@ -408,6 +408,115 @@ function initSolutionAnimation() {
     });
 }
 
+function initAmbientParticleNetwork(canvasId) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+
+    const section = canvas.parentElement;
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(72, section.clientWidth / section.clientHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(section.clientWidth, section.clientHeight);
+
+    const particleCount = 84;
+    const positions = new Float32Array(particleCount * 3);
+    const velocities = [];
+
+    for (let i = 0; i < particleCount; i++) {
+        positions[i * 3] = (Math.random() - 0.5) * 20;
+        positions[i * 3 + 1] = (Math.random() - 0.5) * 18;
+        positions[i * 3 + 2] = (Math.random() - 0.5) * 6;
+        velocities.push({
+            x: (Math.random() - 0.5) * 0.0045,
+            y: (Math.random() - 0.5) * 0.0045,
+            z: (Math.random() - 0.5) * 0.002
+        });
+    }
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+
+    const points = new THREE.Points(
+        geo,
+        new THREE.PointsMaterial({
+            color: 0x61dcff,
+            size: 0.065,
+            transparent: true,
+            opacity: 0.72,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false
+        })
+    );
+    scene.add(points);
+
+    const lineMat = new THREE.LineBasicMaterial({
+        color: 0xa7f1ff,
+        transparent: true,
+        opacity: 0.12,
+        blending: THREE.AdditiveBlending
+    });
+
+    let linesMesh = null;
+    camera.position.z = 8.8;
+
+    function animate(time) {
+        requestAnimationFrame(animate);
+        const t = time * 0.001;
+
+        const posArr = geo.attributes.position.array;
+        for (let i = 0; i < particleCount; i++) {
+            posArr[i * 3] += velocities[i].x;
+            posArr[i * 3 + 1] += velocities[i].y;
+            posArr[i * 3 + 2] += velocities[i].z;
+
+            if (Math.abs(posArr[i * 3]) > 10) velocities[i].x *= -1;
+            if (Math.abs(posArr[i * 3 + 1]) > 9) velocities[i].y *= -1;
+            if (Math.abs(posArr[i * 3 + 2]) > 3) velocities[i].z *= -1;
+        }
+        geo.attributes.position.needsUpdate = true;
+
+        if (linesMesh) {
+            scene.remove(linesMesh);
+            linesMesh.geometry.dispose();
+        }
+
+        const linePositions = [];
+        for (let i = 0; i < particleCount; i++) {
+            for (let j = i + 1; j < particleCount; j++) {
+                const dx = posArr[i * 3] - posArr[j * 3];
+                const dy = posArr[i * 3 + 1] - posArr[j * 3 + 1];
+                const dz = posArr[i * 3 + 2] - posArr[j * 3 + 2];
+                if (Math.sqrt(dx * dx + dy * dy + dz * dz) < 3.2) {
+                    linePositions.push(posArr[i * 3], posArr[i * 3 + 1], posArr[i * 3 + 2]);
+                    linePositions.push(posArr[j * 3], posArr[j * 3 + 1], posArr[j * 3 + 2]);
+                }
+            }
+        }
+
+        if (linePositions.length > 0) {
+            const lineGeo = new THREE.BufferGeometry();
+            lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(linePositions, 3));
+            linesMesh = new THREE.LineSegments(lineGeo, lineMat);
+            scene.add(linesMesh);
+        }
+
+        points.rotation.y = Math.sin(t * 0.35) * 0.08;
+        points.rotation.x = Math.cos(t * 0.22) * 0.04;
+        renderer.render(scene, camera);
+    }
+
+    animate(0);
+
+    window.addEventListener('resize', () => {
+        const w = section.clientWidth;
+        const h = section.clientHeight;
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h);
+    });
+}
+
 /* ===== Product Grid Rendering ===== */
 function renderProducts(filteredProducts) {
     const grid = document.getElementById('products-grid');
@@ -828,6 +937,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initHeroAnimation();
     initGlobeAnimation();
     initSolutionAnimation();
+    initAmbientParticleNetwork('performance-ambient-canvas');
+    initAmbientParticleNetwork('core-platform-ambient-canvas');
     initHeader();
     initMobileMenu();
     initProducts();
