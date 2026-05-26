@@ -1,0 +1,102 @@
+.core-platform {
+    position: relative;
+    padding: 6rem 6% 6rem;
+    background: transparent !important;   /* Transparent with !important */
+    overflow: hidden;
+}
+
+.core-platform__header {
+    margin-bottom: 4rem;
+}
+
+.core-platform__title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.core-platform__subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.core-platform__chain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chain-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
+    gap: 3rem;
+}
+
+.chain-step__text {
+    flex: 1;
+    max-width: 420px;
+}
+
+.chain-step__text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 0.4rem;
+}
+
+.chain-step__text p {
+    font-size: 0.88rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+}
+
+.chain-step__visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chain-step__icon {
+    max-width: 180px;
+    height: auto;
+}
+
+.chain-step__icon--mccs {
+    max-width: 90px;
+    margin-bottom: -0.5rem;
+}
+
+.chain-step__icon--car {
+    max-width: 200px;
+}
+
+.chain-step__icon--card {
+    max-width: 180px;
+}
+
+.chain-step__icon--fleet {
+    max-width: 200px;
+}
+
+.chain-connector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    padding-right: 0;
+}
+
+.chain-connector img {
+    width: 80px;
+    height: auto;
+    margin-left: auto;
+    margin-right: 60px;
+}
