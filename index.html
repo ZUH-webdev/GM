@@ -1,349 +1,529 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GMS - 移動のデータで世界の信頼をアップデートする</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="assets/logo.png" type="image/png">
-</head>
-<body>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/performance.css" />
+    <link rel="icon" href="assets/logo.png" type="image/png" />
+  </head>
+  <body>
     <!-- Navigation -->
-    <header class="header">
-        <nav class="nav">
-            <div class="nav__center">
-                <ul class="nav__links">
-                    <li><a href="#about">会社情報</a></li>
-                    <li><a href="#services">事業・サービス</a></li>
-                    <li><a href="#products">製品一覧</a></li>
-                    <li><a href="#sustainability">サステナビリティ</a></li>
-                    <li><a href="#news">ニュース</a></li>
-                    <li><a href="#careers">採用情報</a></li>
-                </ul>
-                <div class="nav__lang">EN/JP</div>
-            </div>
-            <a href="#contact" class="nav__mail">
-                <img src="assets/msg.png" alt="Contact">
-            </a>
-            <button class="nav__hamburger" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-        </nav>
+    <header class="header" id="header">
+      <nav class="nav">
+        <a href="#hero" class="nav__logo" aria-label="GMS Home">
+          <img src="assets/logo.png" alt="GMS Logo" />
+        </a>
+        <div class="nav__right">
+          <div class="nav__center">
+            <div class="nav__lang">EN/JP</div>
+            <ul class="nav__links">
+              <li><a href="#about">会社情報</a></li>
+              <li><a href="#services">事業・サービス</a></li>
+              <li><a href="#products">製品一覧</a></li>
+              <li><a href="#sustainability">サステナビリティ</a></li>
+              <li><a href="#news">ニュース</a></li>
+              <li><a href="#careers">採用情報</a></li>
+            </ul>
+          </div>
+
+          <a href="#contact" class="nav__mail" aria-label="Contact">
+            <img
+              src="assets/msg.png"
+              alt="Contact"
+              onerror="
+                this.outerHTML =
+                  '<svg width=\'44\' height=\'44\' viewBox=\'0 0 44 44\' fill=\'none\' xmlns=\'http://www.w3.org/2000/svg\'>' +
+                  '<circle cx=\'22\' cy=\'22\' r=\'22\' fill=\'%234ea8de\'/>' +
+                  '<path d=\'M11 16h22v14H11z\' stroke=\'%23fff\' stroke-width=\'1.6\' fill=\'none\' rx=\'2\'/>' +
+                  '<path d=\'M11 16l11 10 11-10\' stroke=\'%23fff\' stroke-width=\'1.6\'/>' +
+                  '</svg>'
+              "
+            />
+          </a>
+        </div>
+
+        <button class="nav__hamburger" aria-label="メニュー">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <img src="assets/first-view.png" alt="" class="hero__bg">
-        <canvas id="hero-canvas"></canvas>
-        <div class="hero__content">
-            <h1 class="hero__title">
-                移動のデータで<br>
-                世界の信頼を<br>
-                アップデートする
-            </h1>
-            <p class="hero__subtitle">モビリティサービスの提供を通じ、<br>多くの人を幸せにする。</p>
-            <p class="hero__description">
-                与信不足で夢を諦めていた人々に、IoT技術でローンの機会と働く喜びを。日本からASEAN、そして世界へ。社会課題をビジネスで解決し、1億人の人生を豊かに変えていくGMSのストーリーをご紹介します。
-            </p>
-            <a href="#story" class="hero__btn">OUR STORY</a>
-        </div>
+      <img
+        src="assets/first-view.png"
+        alt=""
+        class="hero__bg"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <canvas id="hero-canvas"></canvas>
+      <div class="hero__content">
+        <h1 class="hero__title">
+          移動のデータで<br />
+          世界の信頼を<br />
+          アップデートする
+        </h1>
+        <p class="hero__subtitle">
+          モビリティサービスの提供を通じ、<br />多くの人を幸せにする。
+        </p>
+        <p class="hero__description">
+          与信不足で夢を諦めていた人々に、IoT技術でローンの機会と働く喜びを。日本からASEAN、そして世界へ。社会課題をビジネスで解決し、1億人の人生を豊かに変えていくGMSのストーリーをご紹介します。
+        </p>
+        <a href="#story" class="hero__btn">OUR STORY</a>
+      </div>
     </section>
 
     <!-- New Performance Section -->
     <section class="performance" id="performance">
-        <div class="performance__content">
-            <h2 class="performance__title">New<br>Performance</h2>
-            <p class="performance__subtitle">GMSが世界を繋ぐ、車両データの可能性。</p>
-            <div class="performance__car-wrap">
-                <img src="assets/car.png" alt="Connected Car" class="performance__car">
-            </div>
-            <div class="performance__metric">
-                <p class="performance__metric-label">サービスを活用した<br>車両の総走行距離</p>
-                <p class="performance__metric-value">0000万km</p>
-                <p class="performance__metric-sub">地球0周分</p>
-            </div>
+      <div class="performance__content">
+        <h2 class="performance__title">New<br />Performance</h2>
+        <p class="performance__subtitle">
+          GMSが世界を繋ぐ、車両データの可能性。
+        </p>
+        <div class="performance__car-wrap">
+          <img
+            src="assets/car.png"
+            alt="Connected Car"
+            class="performance__car"
+          />
         </div>
-        <div class="performance__visual">
-            <div class="performance__globe-stack">
-                <canvas id="performance-globe-canvas" class="performance__globe-canvas"></canvas>
-                <img src="assets/Asset 21.png" alt="" class="globe globe--dots">
-                <img src="assets/Asset 23.png" alt="" class="globe globe--wire">
-                <img src="assets/Asset 22.png" alt="" class="globe globe--shade">
-            </div>
+        <div class="performance__metric">
+          <p class="performance__metric-label">
+            サービスを活用した<br />車両の総走行距離
+          </p>
+          <p class="performance__metric-value">0000万km</p>
+          <p class="performance__metric-sub">地球0周分</p>
         </div>
-        <img src="assets/marquee-1.png" alt="Data-driven mobility" class="performance__marquee">
+      </div>
+      <div class="performance__visual">
+        <div class="performance__globe-stack">
+          <!-- LEFT HALF — glowing neon-blue side -->
+          <div class="globe-side globe-side--left">
+            <div class="globe-side__glow"></div>
+            <img src="assets/Asset 22.png" alt="" class="globe gs-shade" />
+            <img src="assets/Asset 21.png" alt="" class="globe gs-dots" />
+            <img src="assets/Asset 23.png" alt="" class="globe gs-wire" />
+            <img src="assets/Asset 24.png" alt="" class="globe gs-spark" />
+          </div>
+
+          <!-- RIGHT HALF — dark sphere + white wireframe side -->
+          <div class="globe-side globe-side--right">
+            <img src="assets/Asset 22.png" alt="" class="globe gs-shade" />
+            <img src="assets/Asset 21.png" alt="" class="globe gs-dots" />
+            <img src="assets/Asset 23.png" alt="" class="globe gs-wire" />
+            <img src="assets/Asset 24.png" alt="" class="globe gs-spark" />
+          </div>
+
+          <canvas
+            id="performance-globe-canvas"
+            class="performance__globe-canvas"
+          ></canvas>
+        </div>
+      </div>
+      <img
+        src="assets/marquee-1.png"
+        alt="Data-driven mobility"
+        class="performance__marquee"
+      />
     </section>
+
+    <!-- Section divider marquee -->
+    <div class="section-marquee section-marquee--mobility" aria-hidden="true">
+      <span>Data-driven mobility</span>
+    </div>
 
     <!-- Core Platform Section -->
     <section class="core-platform" id="services">
-        <div class="core-platform__header">
-            <h2 class="core-platform__title">CORE<br>PLAT FORM</h2>
-            <p class="core-platform__subtitle">コアプラットフォーム</p>
+      <div class="core-platform__header">
+        <h2 class="core-platform__title">CORE<br />PLAT FORM</h2>
+        <p class="core-platform__subtitle">コアプラットフォーム</p>
+      </div>
+
+      <div class="core-platform__chain">
+        <!-- Step 1 -->
+        <div class="chain-step">
+          <div class="chain-step__text">
+            <h3>車両から真実のデータを抽出する。</h3>
+            <p>
+              車両に取り付けられたMCCSが、<br />走行・位置・エンジン状態、<br />さらに外部センサーのデータを抽出。
+            </p>
+          </div>
+          <div class="chain-step__visual">
+            <img
+              src="assets/Asset 4.png"
+              alt="MCCS"
+              class="chain-step__icon chain-step__icon--mccs"
+            />
+            <img
+              src="assets/car2.png"
+              alt="Car"
+              class="chain-step__icon chain-step__icon--car"
+            />
+          </div>
         </div>
 
-        <div class="core-platform__chain">
-            <!-- Step 1 -->
-            <div class="chain-step">
-                <div class="chain-step__text">
-                    <h3>車両から真実のデータを抽出する。</h3>
-                    <p>車両に取り付けられたMCCSが、<br>走行・位置・エンジン状態、<br>さらに外部センサーのデータを抽出。</p>
-                </div>
-                <div class="chain-step__visual">
-                    <img src="assets/Asset 4.png" alt="MCCS" class="chain-step__icon chain-step__icon--mccs">
-                    <img src="assets/car2.png" alt="Car" class="chain-step__icon chain-step__icon--car">
-                </div>
-            </div>
-
-            <div class="chain-connector">
-                <img src="assets/Asset 30.png" alt="">
-            </div>
-
-            <!-- Step 2 -->
-            <div class="chain-step">
-                <div class="chain-step__text">
-                    <h3>データを解析し、<br>価値ある「信用」と「安全」へ変換。</h3>
-                    <p>収集されたデータをMSPFでリアルタイム解析。<br>高精度なスコアリングと「遠隔制御」を可能に。</p>
-                </div>
-                <div class="chain-step__visual">
-                    <img src="assets/card.png" alt="AI Analytics" class="chain-step__icon chain-step__icon--card">
-                </div>
-            </div>
-
-            <div class="chain-connector">
-                <img src="assets/Asset 31.png" alt="">
-            </div>
-
-            <!-- Step 3 -->
-            <div class="chain-step">
-                <div class="chain-step__text">
-                    <h3>あらゆるビジネスへ、<br>最適化されたソリューションを届ける。</h3>
-                    <p>金融機関、物流企業、自治体へ、価値あるデータとして提供。<br>API接続で新たな活用・展開も可能。</p>
-                </div>
-                <div class="chain-step__visual">
-                    <img src="assets/Asset 3.png" alt="Fleet" class="chain-step__icon chain-step__icon--fleet">
-                </div>
-            </div>
+        <div class="chain-connector">
+          <img src="assets/Asset 30.png" alt="" />
         </div>
+
+        <!-- Step 2 -->
+        <div class="chain-step">
+          <div class="chain-step__text">
+            <h3>データを解析し、<br />価値ある「信用」と「安全」へ変換。</h3>
+            <p>
+              収集されたデータをMSPFでリアルタイム解析。<br />高精度なスコアリングと「遠隔制御」を可能に。
+            </p>
+          </div>
+          <div class="chain-step__visual">
+            <img
+              src="assets/card.png"
+              alt="AI Analytics"
+              class="chain-step__icon chain-step__icon--card"
+            />
+          </div>
+        </div>
+
+        <div class="chain-connector">
+          <img src="assets/Asset 31.png" alt="" />
+        </div>
+
+        <!-- Step 3 -->
+        <div class="chain-step">
+          <div class="chain-step__text">
+            <h3>
+              あらゆるビジネスへ、<br />最適化されたソリューションを届ける。
+            </h3>
+            <p>
+              金融機関、物流企業、自治体へ、価値あるデータとして提供。<br />API接続で新たな活用・展開も可能。
+            </p>
+          </div>
+          <div class="chain-step__visual">
+            <img
+              src="assets/Asset 3.png"
+              alt="Fleet"
+              class="chain-step__icon chain-step__icon--fleet"
+            />
+          </div>
+        </div>
+      </div>
     </section>
+
+    <!-- Section divider marquee -->
+    <div class="section-marquee section-marquee--risk" aria-hidden="true">
+      <span>Data: From Risk to Opportunity</span>
+    </div>
 
     <!-- Solution Section -->
     <section class="solution" id="solution">
-        <canvas id="solution-canvas" class="solution__canvas"></canvas>
-        <img src="assets/Asset 5.png" alt="" class="solution__deco solution__deco--tl">
-        <img src="assets/Asset 6.png" alt="" class="solution__deco solution__deco--tr">
-        <img src="assets/Asset 7.png" alt="" class="solution__deco solution__deco--bl">
-        <img src="assets/Asset 8.png" alt="" class="solution__deco solution__deco--br">
-        <div class="solution__header">
-            <h2 class="solution__title">SOLUTION</h2>
-            <p class="solution__subtitle">データの力で、ビジネスのリスクを機会に変える。</p>
+      <canvas id="solution-canvas" class="solution__canvas"></canvas>
+      <img
+        src="assets/Asset 5.png"
+        alt=""
+        class="solution__deco solution__deco--tl"
+      />
+      <img
+        src="assets/Asset 6.png"
+        alt=""
+        class="solution__deco solution__deco--tr"
+      />
+      <img
+        src="assets/Asset 7.png"
+        alt=""
+        class="solution__deco solution__deco--bl"
+      />
+      <img
+        src="assets/Asset 8.png"
+        alt=""
+        class="solution__deco solution__deco--br"
+      />
+      <div class="solution__header">
+        <h2 class="solution__title">SOLUTION</h2>
+        <p class="solution__subtitle">
+          データの力で、ビジネスのリスクを機会に変える。
+        </p>
+      </div>
+      <div class="solution__content">
+        <div class="solution__service solution__service--top">
+          <span class="solution__label">「1億人にファイナンスを届ける」</span>
+          <h3>金融包摂型FinTechサービス</h3>
+          <a href="#" class="solution__btn">GMS FinTech</a>
         </div>
-        <div class="solution__content">
-            <div class="solution__service solution__service--top">
-                <span class="solution__label">「1億人にファイナンスを届ける」</span>
-                <h3>金融包摂型FinTechサービス</h3>
-                <a href="#" class="solution__btn">GMS FinTech</a>
-            </div>
-            <div class="solution__image">
-                <img src="assets/parket.png" alt="Smart City">
-            </div>
-            <div class="solution__bottom-services">
-                <div class="solution__service">
-                    <span class="solution__label">「飲んだら、エンジンがかけられない」</span>
-                    <h3>飲酒運転防止サービス</h3>
-                    <a href="#" class="solution__btn">Bqey</a>
-                </div>
-                <div class="solution__service">
-                    <span class="solution__label">「あなたの愛車、盗ませない」</span>
-                    <h3>車両盗難防止サービス</h3>
-                    <a href="#" class="solution__btn">Smart Blocker</a>
-                </div>
-            </div>
+        <div class="solution__image">
+          <img src="assets/parket.png" alt="Smart City" />
         </div>
+        <div class="solution__bottom-services">
+          <div class="solution__service">
+            <span class="solution__label"
+              >「飲んだら、エンジンがかけられない」</span
+            >
+            <h3>飲酒運転防止サービス</h3>
+            <a href="#" class="solution__btn">Bqey</a>
+          </div>
+          <div class="solution__service">
+            <span class="solution__label">「あなたの愛車、盗ませない」</span>
+            <h3>車両盗難防止サービス</h3>
+            <a href="#" class="solution__btn">Smart Blocker</a>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Products Section -->
     <section class="products" id="products">
-        <div class="products__container">
-            <div class="products__header">
-                <h2 class="products__title">PRODUCTS</h2>
-                <p class="products__subtitle">GMSが提供するモビリティ・ソリューション一覧</p>
-                <div class="products__search">
-                    <span class="products__search-icon">⌕</span>
-                    <input
-                        type="search"
-                        id="product-search"
-                        class="products__search-input"
-                        placeholder="製品名・カテゴリ・キーワードで検索..."
-                        autocomplete="off"
-                    >
-                </div>
-            </div>
-            <div class="products__grid" id="products-grid"></div>
-            <p class="products__no-results" id="no-results">該当する製品が見つかりませんでした。</p>
+      <div class="products__container">
+        <div class="products__header">
+          <h2 class="products__title">PRODUCTS</h2>
+          <p class="products__subtitle">
+            GMSが提供するモビリティ・ソリューション一覧
+          </p>
+          <div class="products__search">
+            <span class="products__search-icon">⌕</span>
+            <input
+              type="search"
+              id="product-search"
+              class="products__search-input"
+              placeholder="製品名・カテゴリ・キーワードで検索..."
+              autocomplete="off"
+            />
+          </div>
         </div>
+        <div class="products__grid" id="products-grid"></div>
+        <p class="products__no-results" id="no-results">
+          該当する製品が見つかりませんでした。
+        </p>
+      </div>
     </section>
 
     <!-- SDGs / ESG Section -->
     <section class="sdgs" id="sdgs">
-        <p class="sdgs__marquee">Driving Data for a Sustainable Future</p>
-        <div class="sdgs__container">
-            <div class="sdgs__left">
-                <h2 class="sdgs__title">SDGs／ESG</h2>
-                <p class="sdgs__subtitle">一分一秒の走行データが、持続可能な未来を形づくる。</p>
-                <div class="sdgs__body">
-                    <h3>GMSの事業活動そのものがSDGsに貢献</h3>
-                    <p>GMSは、SDGsの最優先課題「貧困をなくそう」の解決に、事業を通じて貢献しています(*)。その「将来性」「革新性」「社会的インパクト」の点が評価され、2019年に日本で開催されたG20において、GMS事業が「持続可能かつ包括的な成長に貢献する国際ビジネス事例」として採択されました。</p>
-                    <p>GMSは社会課題解決の中に経済合理性を創出し、真の意味で持続可能なビジネスモデルを構築しています。</p>
-                    <small>*経済産業省「SDGs経営/ESG投資研究会」委員に選任（2019年、当社代表取締役社長 CEO）</small>
-                </div>
-                <div class="sdgs__icons">
-                    <img src="assets/Asset 13.png" alt="SDGs Goals">
-                </div>
-                <a href="#" class="sdgs__btn">もっと詳しく</a>
-            </div>
-            <div class="sdgs__right">
-                <div class="sdgs__collage">
-                    <img src="assets/stock-photo-a-joyful-southeast-asian-tricycle-driver-and-female-passenger-enjoy-a-light-hearted-ride-smiling-2657469727.jpg" alt="" class="sdgs__img sdgs__img--1">
-                    <img src="assets/stock-photo-group-of-happy-smiling-village-school-kids-in-uniform-standing-at-middle-paddy-field-by-looking-2150952251.jpg" alt="" class="sdgs__img sdgs__img--2">
-                    <img src="assets/stock-photo-south-asian-rural-children-smiling-with-handmade-kite-in-hands-2508350681.jpg" alt="" class="sdgs__img sdgs__img--3">
-                    <img src="assets/pixta_98835275.jpg" alt="" class="sdgs__img sdgs__img--4">
-                </div>
-            </div>
+      <p class="sdgs__marquee">Driving Data for a Sustainable Future</p>
+      <div class="sdgs__container">
+        <div class="sdgs__left">
+          <h2 class="sdgs__title">SDGs／ESG</h2>
+          <p class="sdgs__subtitle">
+            一分一秒の走行データが、持続可能な未来を形づくる。
+          </p>
+          <div class="sdgs__body">
+            <h3>GMSの事業活動そのものがSDGsに貢献</h3>
+            <p>
+              GMSは、SDGsの最優先課題「貧困をなくそう」の解決に、事業を通じて貢献しています(*)。その「将来性」「革新性」「社会的インパクト」の点が評価され、2019年に日本で開催されたG20において、GMS事業が「持続可能かつ包括的な成長に貢献する国際ビジネス事例」として採択されました。
+            </p>
+            <p>
+              GMSは社会課題解決の中に経済合理性を創出し、真の意味で持続可能なビジネスモデルを構築しています。
+            </p>
+            <small
+              >*経済産業省「SDGs経営/ESG投資研究会」委員に選任（2019年、当社代表取締役社長
+              CEO）</small
+            >
+          </div>
+          <div class="sdgs__icons">
+            <img src="assets/Asset 13.png" alt="SDGs Goals" />
+          </div>
+          <a href="#" class="sdgs__btn">もっと詳しく</a>
         </div>
+        <div class="sdgs__right">
+          <div class="sdgs__collage">
+            <img
+              src="assets/stock-photo-a-joyful-southeast-asian-tricycle-driver-and-female-passenger-enjoy-a-light-hearted-ride-smiling-2657469727.jpg"
+              alt=""
+              class="sdgs__img sdgs__img--1"
+            />
+            <img
+              src="assets/stock-photo-group-of-happy-smiling-village-school-kids-in-uniform-standing-at-middle-paddy-field-by-looking-2150952251.jpg"
+              alt=""
+              class="sdgs__img sdgs__img--2"
+            />
+            <img
+              src="assets/stock-photo-south-asian-rural-children-smiling-with-handmade-kite-in-hands-2508350681.jpg"
+              alt=""
+              class="sdgs__img sdgs__img--3"
+            />
+            <img
+              src="assets/pixta_98835275.jpg"
+              alt=""
+              class="sdgs__img sdgs__img--4"
+            />
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Mission Statement Section -->
     <section class="mission">
-        <div class="mission__container">
-            <p class="mission__quote">「この仕組みなしでは、社会が回らない」と言われる未来を創りに行く。</p>
-            <div class="mission__body">
-                <p>GMSの歩みは、短期的な利益の追求ではありません。</p>
-                <p>行動価値を標準化し、社会的リスクを最小化するための、不可逆なプロセスです。</p>
-                <p>私たちは、社会の基盤として「避けて通れない存在」になります。</p>
-            </div>
-            <h2 class="mission__cta">この変革を、ともに。</h2>
+      <div class="mission__container">
+        <p class="mission__quote">
+          「この仕組みなしでは、社会が回らない」と言われる未来を創りに行く。
+        </p>
+        <div class="mission__body">
+          <p>GMSの歩みは、短期的な利益の追求ではありません。</p>
+          <p>
+            行動価値を標準化し、社会的リスクを最小化するための、不可逆なプロセスです。
+          </p>
+          <p>私たちは、社会の基盤として「避けて通れない存在」になります。</p>
         </div>
+        <h2 class="mission__cta">この変革を、ともに。</h2>
+      </div>
     </section>
 
     <!-- Partners Section -->
     <section class="partners">
-        <div class="partners__container">
-            <div class="partners__row"><img src="assets/Asset 17.png" alt="Partners Row 1"></div>
-            <div class="partners__row"><img src="assets/Asset 18.png" alt="Partners Row 2"></div>
-            <div class="partners__row"><img src="assets/Asset 19.png" alt="Partners Row 3"></div>
+      <div class="partners__container">
+        <div class="partners__row">
+          <img src="assets/Asset 17.png" alt="Partners Row 1" />
         </div>
+        <div class="partners__row">
+          <img src="assets/Asset 18.png" alt="Partners Row 2" />
+        </div>
+        <div class="partners__row">
+          <img src="assets/Asset 19.png" alt="Partners Row 3" />
+        </div>
+      </div>
     </section>
 
     <!-- News Section -->
     <section class="news" id="news">
-        <div class="news__container">
-            <div class="news__header">
-                <h2 class="news__title">ニュース</h2>
-                <div class="news__filter">
-                    <select id="news-filter" class="news__select" aria-label="Filter news">
-                        <option value="all">すべて</option>
-                        <option value="business">事業</option>
-                        <option value="release">ニュースリリース</option>
-                        <option value="global">グローバル</option>
-                    </select>
-                </div>
-            </div>
-            <ul class="news__list" id="news-list">
-                <li class="news__item" data-category="business release global">
-                    <div class="news__meta">
-                        <time class="news__date" datetime="2026-05-01">2026.05.01</time>
-                        <div class="news__tags">
-                            <span class="news__tag">事業</span>
-                            <span class="news__tag">ニュースリリース</span>
-                            <span class="news__tag">グローバル</span>
-                        </div>
-                    </div>
-                    <a href="#" class="news__link">特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a>
-                </li>
-                <li class="news__item" data-category="business release global">
-                    <div class="news__meta">
-                        <time class="news__date" datetime="2026-05-01">2026.05.01</time>
-                        <div class="news__tags">
-                            <span class="news__tag">事業</span>
-                            <span class="news__tag">ニュースリリース</span>
-                            <span class="news__tag">グローバル</span>
-                        </div>
-                    </div>
-                    <a href="#" class="news__link">特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a>
-                </li>
-                <li class="news__item" data-category="business release global">
-                    <div class="news__meta">
-                        <time class="news__date" datetime="2026-05-01">2026.05.01</time>
-                        <div class="news__tags">
-                            <span class="news__tag">事業</span>
-                            <span class="news__tag">ニュースリリース</span>
-                            <span class="news__tag">グローバル</span>
-                        </div>
-                    </div>
-                    <a href="#" class="news__link">特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a>
-                </li>
-            </ul>
+      <div class="news__container">
+        <div class="news__header">
+          <h2 class="news__title">ニュース</h2>
+          <div class="news__filter">
+            <select
+              id="news-filter"
+              class="news__select"
+              aria-label="Filter news"
+            >
+              <option value="all">すべて</option>
+              <option value="business">事業</option>
+              <option value="release">ニュースリリース</option>
+              <option value="global">グローバル</option>
+            </select>
+          </div>
         </div>
+        <ul class="news__list" id="news-list">
+          <li class="news__item" data-category="business release global">
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-05-01">2026.05.01</time>
+              <div class="news__tags">
+                <span class="news__tag">事業</span>
+                <span class="news__tag">ニュースリリース</span>
+                <span class="news__tag">グローバル</span>
+              </div>
+            </div>
+            <a href="#" class="news__link"
+              >特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a
+            >
+          </li>
+          <li class="news__item" data-category="business release global">
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-05-01">2026.05.01</time>
+              <div class="news__tags">
+                <span class="news__tag">事業</span>
+                <span class="news__tag">ニュースリリース</span>
+                <span class="news__tag">グローバル</span>
+              </div>
+            </div>
+            <a href="#" class="news__link"
+              >特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a
+            >
+          </li>
+          <li class="news__item" data-category="business release global">
+            <div class="news__meta">
+              <time class="news__date" datetime="2026-05-01">2026.05.01</time>
+              <div class="news__tags">
+                <span class="news__tag">事業</span>
+                <span class="news__tag">ニュースリリース</span>
+                <span class="news__tag">グローバル</span>
+              </div>
+            </div>
+            <a href="#" class="news__link"
+              >特定技能として在留資格が設けられた「自動車運送業」における、人手不足解決に向けたインドネシアでの調査結果と新たな取り組みの報告</a
+            >
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Company / Contact Section -->
     <section class="company-section">
-        <div class="company-section__banner">
-            <img src="assets/Asset 20.png" alt="GMS Team" class="company-section__hero">
-        </div>
-        <div class="company-section__cards">
-            <a href="#" class="company-card">
-                <img src="assets/23917381_m.jpg" alt="Company Information" class="company-card__image">
-                <h3 class="company-card__title">企業情報</h3>
-                <p class="company-card__desc">GMSのご紹介</p>
-            </a>
-            <a href="#" class="company-card">
-                <img src="assets/33643559_m.jpg" alt="Careers" class="company-card__image">
-                <h3 class="company-card__title">採用情報</h3>
-                <p class="company-card__desc">尊敬できる人が集う職場でありたい</p>
-            </a>
-            <a href="#" class="company-card">
-                <img src="assets/33899414_m.jpg" alt="Contact" class="company-card__image">
-                <h3 class="company-card__title">お問い合わせ</h3>
-                <p class="company-card__desc">お気軽にご相談ください。</p>
-            </a>
-        </div>
+      <div class="company-section__banner">
+        <img
+          src="assets/Asset 20.png"
+          alt="GMS Team"
+          class="company-section__hero"
+        />
+      </div>
+      <div class="company-section__cards">
+        <a href="#" class="company-card">
+          <img
+            src="assets/23917381_m.jpg"
+            alt="Company Information"
+            class="company-card__image"
+          />
+          <h3 class="company-card__title">企業情報</h3>
+          <p class="company-card__desc">GMSのご紹介</p>
+        </a>
+        <a href="#" class="company-card">
+          <img
+            src="assets/33643559_m.jpg"
+            alt="Careers"
+            class="company-card__image"
+          />
+          <h3 class="company-card__title">採用情報</h3>
+          <p class="company-card__desc">尊敬できる人が集う職場でありたい</p>
+        </a>
+        <a href="#" class="company-card">
+          <img
+            src="assets/33899414_m.jpg"
+            alt="Contact"
+            class="company-card__image"
+          />
+          <h3 class="company-card__title">お問い合わせ</h3>
+          <p class="company-card__desc">お気軽にご相談ください。</p>
+        </a>
+      </div>
     </section>
-
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__top">
-                <div class="footer__brand">
-                    <img src="assets/logo.svg" alt="GMS" class="footer__logo">
-                    <p class="footer__tagline">移動のデータで世界の信頼をアップデートする</p>
-                </div>
-                <div class="footer__links">
-                    <div class="footer__col">
-                        <h4>Company</h4>
-                        <a href="#">会社情報</a>
-                        <a href="#">ニュース</a>
-                        <a href="#">採用情報</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Services</h4>
-                        <a href="#">Fleet Management</a>
-                        <a href="#">AI Credit Scoring</a>
-                        <a href="#">MCCS Device</a>
-                    </div>
-                    <div class="footer__col">
-                        <h4>Legal</h4>
-                        <a href="#">プライバシーポリシー</a>
-                        <a href="#">利用規約</a>
-                        <a href="#">お問い合わせ</a>
-                    </div>
-                </div>
+      <div class="footer__container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <img src="assets/logo.svg" alt="GMS" class="footer__logo" />
+            <p class="footer__tagline">
+              移動のデータで世界の信頼をアップデートする
+            </p>
+          </div>
+          <div class="footer__links">
+            <div class="footer__col">
+              <h4>Company</h4>
+              <a href="#">会社情報</a>
+              <a href="#">ニュース</a>
+              <a href="#">採用情報</a>
             </div>
-            <div class="footer__bottom">
-                <p>&copy; 2026 Global Mobility Service, Inc. All rights reserved.</p>
+            <div class="footer__col">
+              <h4>Services</h4>
+              <a href="#">Fleet Management</a>
+              <a href="#">AI Credit Scoring</a>
+              <a href="#">MCCS Device</a>
             </div>
+            <div class="footer__col">
+              <h4>Legal</h4>
+              <a href="#">プライバシーポリシー</a>
+              <a href="#">利用規約</a>
+              <a href="#">お問い合わせ</a>
+            </div>
+          </div>
         </div>
+        <div class="footer__bottom">
+          <p>&copy; 2026 Global Mobility Service, Inc. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -351,5 +531,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/lenis@1.1.1/dist/lenis.min.js"></script>
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>

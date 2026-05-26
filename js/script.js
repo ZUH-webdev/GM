@@ -651,6 +651,44 @@ function initGSAPAnimations() {
         });
     });
 
+    // Chain step car — drive across as user scrolls through Core Platform
+    const carIcon = document.querySelector('.chain-step__icon--car');
+    if (carIcon) {
+        gsap.fromTo(carIcon,
+            { x: -160, rotateZ: -2 },
+            {
+                x: 160,
+                rotateZ: 2,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.core-platform',
+                    start: 'top 75%',
+                    end: 'bottom 30%',
+                    scrub: 1
+                }
+            }
+        );
+    }
+
+    // Performance car — bobs and drives slightly with scroll
+    const perfCar = document.querySelector('.performance__car');
+    if (perfCar) {
+        gsap.fromTo(perfCar,
+            { x: -40 },
+            {
+                x: 40,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '.performance',
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    scrub: 1.2
+                }
+            }
+        );
+    }
+
+
     // Solution section - title
     gsap.from('.solution__title', {
         y: 50,
